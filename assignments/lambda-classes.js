@@ -31,6 +31,11 @@ class Instructor extends Person {
     console.log(`${student.name} receives a perfect score on ${subject}`)
   }
 
+  changeGrade(student, grade) {
+    let newGrade = this.grade*(math.Random());
+    return `${student.name}'s new grade is ${newGrade}'`
+  }
+
 }
 
 class Student extends Person {
@@ -39,6 +44,7 @@ class Student extends Person {
     this.previousBackground = studentAttributes.previousBackground;
     this.className = studentAttributes.className;
     this.favSubjects = studentAttributes.favSubjects;
+    this.grade = 92;
   }
 
   listsSubjects() {
@@ -51,6 +57,15 @@ class Student extends Person {
 
   sprintChallenge(subject) {
     console.log(`${student.name} has begun sprint challenge on ${subject}`)
+  }
+
+  graduate(student, newGrade) {
+    if (newGrade > 70) {
+      return `${student.name} graduated!`
+    }
+    else {
+      changeGrade(student, grade)
+    }
   }
 }
 
